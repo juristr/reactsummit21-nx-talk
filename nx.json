@@ -1,0 +1,28 @@
+{
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "reactcourses",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+    }
+  },
+  "projects": {
+    "courses": { "tags": ["type:app", "scope:admin"] },
+    "courses-e2e": { "tags": [], "implicitDependencies": ["courses"] },
+    "courseitem": { "tags": ["type:feature", "scope:shared"] },
+    "public": { "tags": ["type:app", "scope:public"] },
+    "public-e2e": { "tags": [], "implicitDependencies": ["public"] },
+    "core": { "tags": ["type:util", "scope:shared"] },
+    "admin-coupons": { "tags": ["type:feature", "scope:admin"] },
+    "admin-sales": { "tags": ["type:feature", "scope:admin"] }
+  }
+}
